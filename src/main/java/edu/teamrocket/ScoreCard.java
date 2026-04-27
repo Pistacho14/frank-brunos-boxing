@@ -54,11 +54,11 @@ public class ScoreCard {
     public void loadJudgeScoreCard(String[] judgeScoreCard) {
 
 
-        Optional<String> roundsScore = Optional.empty();
+        Optional<Round> roundsScore = Optional.empty();
         
             for (String round : judgeScoreCard) {
-                roundsScore = Optional.ofNullable(round);
-                roundsScore.ifPresent(a -> rounds.add(RoundFactory.getRound(a)));
+                roundsScore = Optional.ofNullable(RoundFactory.getRound(round));
+                roundsScore.ifPresent(this::addRound);
             }
     }
 

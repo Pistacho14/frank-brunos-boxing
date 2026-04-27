@@ -47,6 +47,10 @@ public class ScoreCard {
         return (byte) rounds.size();
     }
 
+    public void addRound(Round round) {
+        this.rounds.add(round);
+    }
+
     public void loadJudgeScoreCard(String[] judgeScoreCard) {
 
 
